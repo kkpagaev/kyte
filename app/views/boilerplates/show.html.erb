@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @boilerplate %>
+
+<div>
+  <%= link_to "Edit this boilerplate", edit_boilerplate_path(@boilerplate) %> |
+  <%= link_to "Back to boilerplates", boilerplates_path %>
+
+  <%= button_to "Destroy this boilerplate", @boilerplate, method: :delete %>
+</div>

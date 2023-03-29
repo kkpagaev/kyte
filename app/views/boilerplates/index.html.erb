@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Boilerplates</h1>
+
+<div id="boilerplates">
+  <% @boilerplates.each do |boilerplate| %>
+    <%= render boilerplate %>
+    <p>
+      <%= link_to "Show this boilerplate", boilerplate %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New boilerplate", new_boilerplate_path %>
