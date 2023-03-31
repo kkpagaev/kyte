@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es2017",
     "outDir": "dist",
+    "moduleResolution": "node",
     "allowJs": true
   },
   "include": ["./app/javascript/**/*", "./.eslintrc.js"]
