@@ -6,5 +6,7 @@ class CreateRepositories < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+
+    add_reference :repositories, :project, foreign_key: true
   end
 end

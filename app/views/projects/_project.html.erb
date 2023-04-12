@@ -1,4 +1,5 @@
 <div id="<%= dom_id project %>">
+  <%= image_tag project.avatar.variant(resize_and_pad: [500, 500, gravity: 'north']) %>
   <p>
     <strong>Title:</strong>
     <%= project.title %>

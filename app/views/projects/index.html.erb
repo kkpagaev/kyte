@@ -2,13 +2,19 @@
 
 <h1>Projects</h1>
 
-<div id="projects">
-  <% @projects.each do |project| %>
-    <%= render project %>
-    <p>
-      <%= link_to "Show this project", project %>
-    </p>
-  <% end %>
+<div class="row">
+  <div class="col-md-4">
+    <div id="projects">
+      <% @projects.each do |pro| %>
+        <%= render pro %>
+        <p>
+        <%= link_to "Show this project", project_view_path(id: pro.id) %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <%= render 'project_view', locals: { project: @project } %>
+  </div>
 </div>
-
 <%= link_to "New project", new_project_path %>

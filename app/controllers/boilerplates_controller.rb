@@ -1,4 +1,5 @@
 class BoilerplatesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_boilerplate, only: %i[ show edit update destroy ]
 
   # GET /boilerplates or /boilerplates.json

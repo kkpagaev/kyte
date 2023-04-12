@@ -5,5 +5,7 @@ class CreateProjects < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+
+    create_join_table :projects, :users
   end
 end

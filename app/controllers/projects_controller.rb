@@ -1,13 +1,24 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
+
+  before_action :set_project, only: %i[ show edit update destroy, project_view ]
 
   # GET /projects or /projects.json
   def index
+    @foo = "bar"
     @projects = Project.all
   end
 
   # GET /projects/1 or /projects/1.json
   def show
+  end
+
+  def project_view
+    render turbo_stream:
+      turbo_stream.replace('right-frame', 
+        partial: 'project_view', 
+        locals: { project: @project }
+      )
   end
 
   # GET /projects/new
@@ -65,6 +76,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:title)
+      params.require(:project).permit(:title, :avatar)
     end
 end

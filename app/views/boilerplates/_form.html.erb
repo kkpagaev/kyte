@@ -1,4 +1,4 @@
-<%= form_with(model: boilerplate) do |form| %>
+<%= bootstrap_form_with(model: boilerplate) do |form| %>
   <% if boilerplate.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(boilerplate.errors.count, "error") %> prohibited this boilerplate from being saved:</h2>
@@ -12,12 +12,10 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
   <div>
-    <%= form.label :git_link, style: "display: block" %>
     <%= form.text_field :git_link %>
   </div>
 
