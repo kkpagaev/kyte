@@ -1,5 +1,31 @@
+:root {
+    --default-background: #1F1F28;
+    --light-background: #2A2A37;
+    --lighter-background: #363646;
+    --dark-background: #16161D;
+    --content-main: #223249;
+    --content-secondary: #2D4F67;
+    --title-color: #7E9CD8;
+    --text-color: #9CABCA;
+    --nav-text-color: #7FB4CA;
+}
+
 body {
     font: small-caps bold 18px/1 sans-serif;
+    background-color: var(--default-background);
+    color: var(--title-color);
+}
+
+#navigation {
+    background-color: var(--dark-background);
+}
+
+#navbarNav ul li a{
+    color: var(--nav-text-color);
+}
+
+.container h1 {
+    color: var(--title-color);
 }
 
 #img{
@@ -11,7 +37,7 @@ body {
 .project-cell {
     display: flex;
     margin-bottom: 20px;
-    background-color: rgb(190, 162, 213);
+    background-color: var(--content-main);
     border-radius: 20px;
     padding: 10px;
 }
@@ -19,10 +45,12 @@ body {
 #title {
     padding-top: 15px;
     padding-left: 25px;
+    color: var(--title-color);
 }
 
 #edit {
     padding-left: 25px;
+    color: var(--title-color);
 }
 
 #new-link {
@@ -30,9 +58,9 @@ body {
 }
 
 #edit a:link, #edit a:visited, #new-link a:link, #new-link a:visited {
-    background-color: #361a57;
+    background-color: var(--content-secondary);
     border-radius: 15px;
-    color: white;
+    color: var(--text-color);
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
@@ -41,12 +69,12 @@ body {
 
 #new-link a:link, #new-link a:visited {
     font-size: 24px;
-    background-color: #200939;
+    background-color:var(--content-secondary);
     padding: 10px 15px;
 }
   
  #edit a:hover, #edit a:active, #new-link a:active, #new-link a:hover {
-    background-color: rgb(97, 48, 154);
+    background-color: #192d3b;
 }
 
 
