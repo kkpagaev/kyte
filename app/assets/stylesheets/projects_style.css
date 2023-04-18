@@ -1,117 +1,129 @@
 :root {
-    --default-background: #1F1F28;
-    --light-background: #2A2A37;
-    --lighter-background: #363646;
-    --dark-background: #16161D;
-    --content-main: #223249;
-    --content-secondary: #2D4F67;
-    --title-color: #7E9CD8;
-    --text-color: #9CABCA;
-    --nav-text-color: #7FB4CA;
-    --delete-button: #C34043;
-    --delete-text: #43242B;
+  --default-background: #1f1f28;
+  --light-background: #2a2a37;
+  --lighter-background: #363646;
+  --dark-background: #16161d;
+  --content-main: #223249;
+  --content-secondary: #2d4f67;
+  --title-color: #7e9cd8;
+  --text-color: #9cabca;
+  --nav-text-color: #7fb4ca;
+  --delete-button: #c34043;
+  --delete-text: #43242b;
 }
 
 body {
-    font: small-caps bold 18px/1 sans-serif;
-    background-color: var(--default-background);
-    color: var(--title-color);
+  font: small-caps bold 18px/1 sans-serif;
+  background-color: var(--default-background) !important;
+  color: var(--title-color);
 }
 
 #right-frame h2 {
-    color: var(--title-color);
+  color: var(--title-color);
 }
 
 .form-label {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
 .form-control {
-    background-color: var(--content-main);
-    border: 1px solid var(--content-secondary);
+  background-color: var(--content-main);
+  border: 1px solid var(--content-secondary);
 }
 
 #navigation {
-    background-color: var(--dark-background);
+  background-color: var(--dark-background);
 }
 
-#navbarNav ul li a{
-    color: var(--nav-text-color);
+#navbarNav ul li a {
+  color: var(--nav-text-color);
 }
 
 .container h1 {
-    color: var(--title-color);
+  color: var(--title-color);
 }
 
-#img{
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+#img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
 }
 
 .project-cell {
-    display: flex;
-    margin-bottom: 20px;
-    background-color: var(--content-main);
-    border-radius: 20px;
-    padding: 10px;
+  display: flex;
+  margin-bottom: 20px;
+  background-color: var(--content-main);
+  border-radius: 20px;
+  padding: 10px;
 }
 
 #title {
-    padding-top: 15px;
-    padding-left: 25px;
-    color: var(--title-color);
+  padding-top: 15px;
+  padding-left: 25px;
+  color: var(--title-color);
 }
 
 #boilerplates {
-    color: var(--title-color);
+  color: var(--title-color);
 }
 
 .boilerplate {
-    margin-bottom: 20px;
-    background-color: var(--content-main);
-    border-radius: 20px;
-    padding: 10px;
-    color: var(--title-color);
+  margin-bottom: 20px;
+  background-color: var(--content-main);
+  border-radius: 20px;
+  padding: 10px;
+  color: var(--title-color);
 }
 
 .button_to button {
-    margin-top: 10px;
-    background-color: var(--delete-button);
-    padding: 5px 10px;
-    border-radius: 15px;
-    border: none;
-    color: var(--delete-text);
+  margin-top: 10px;
+  background-color: var(--delete-button);
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: none;
+  color: var(--delete-text);
 }
 
 #edit {
-    padding-left: 25px;
-    color: var(--title-color);
+  padding-left: 25px;
+  color: var(--title-color);
 }
 
 #new-link {
-    padding-left: 9%;
+  padding-left: 9%;
 }
 
-.container a:link, .container a:visited, #back-projects a:link, #back-projects a:visited, #edit a:link, #edit a:visited, #new-link a:link, #new-link a:visited {
-    background-color: var(--content-secondary);
-    border-radius: 15px;
-    color: var(--text-color);
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+.container a:link,
+.container a:visited,
+#back-projects a:link,
+#back-projects a:visited,
+#edit a:link,
+#edit a:visited,
+#new-link a:link,
+#new-link a:visited {
+  background-color: var(--content-secondary);
+  border-radius: 15px;
+  color: var(--text-color);
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
-#new-link a:link, #new-link a:visited {
-    font-size: 24px;
-    background-color:var(--content-secondary);
-    padding: 10px 15px;
-}
-  
-.container a:hover, .container a:active, #back-projects a:hover, #back-projects a:active, #edit a:hover, #edit a:active, #new-link a:active, #new-link a:hover {
-    background-color: #192d3b;
+#new-link a:link,
+#new-link a:visited {
+  font-size: 24px;
+  background-color: var(--content-secondary);
+  padding: 10px 15px;
 }
 
-
-  
+.container a:hover,
+.container a:active,
+#back-projects a:hover,
+#back-projects a:active,
+#edit a:hover,
+#edit a:active,
+#new-link a:active,
+#new-link a:hover {
+  background-color: #192d3b;
+}
