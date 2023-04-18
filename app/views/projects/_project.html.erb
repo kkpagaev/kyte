@@ -1,8 +1,12 @@
-<div id="<%= dom_id project %>">
-  <%= image_tag project.avatar.variant(resize_and_pad: [500, 500, gravity: 'north']) %>
-  <p>
+<div id="<%= dom_id project %>" class="project-cell">
+<img id="img" src="<%= (url_for(project.avatar)) %>">
+<div id="info-column">
+  <p id="title">
     <strong>Title:</strong>
     <%= project.title %>
   </p>
-
+  <p id="edit">
+    <%= link_to "Show this project", project_view_path(id: project.id) %>
+  </p>
+</div>
 </div>
