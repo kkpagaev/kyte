@@ -8,6 +8,8 @@
     --title-color: #7E9CD8;
     --text-color: #9CABCA;
     --nav-text-color: #7FB4CA;
+    --delete-button: #C34043;
+    --delete-text: #43242B;
 }
 
 body {
@@ -59,6 +61,27 @@ body {
     padding-top: 15px;
     padding-left: 25px;
     color: var(--title-color);
+}
+
+#boilerplates {
+    color: var(--title-color);
+}
+
+.boilerplate {
+    margin-bottom: 20px;
+    background-color: var(--content-main);
+    border-radius: 20px;
+    padding: 10px;
+    color: var(--title-color);
+}
+
+.button_to button {
+    margin-top: 10px;
+    background-color: var(--delete-button);
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: none;
+    color: var(--delete-text);
 }
 
 #edit {
