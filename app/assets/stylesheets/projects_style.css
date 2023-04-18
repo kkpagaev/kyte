@@ -16,6 +16,19 @@ body {
     color: var(--title-color);
 }
 
+#right-frame h2 {
+    color: var(--title-color);
+}
+
+.form-label {
+    color: var(--text-color);
+}
+
+.form-control {
+    background-color: var(--content-main);
+    border: 1px solid var(--content-secondary);
+}
+
 #navigation {
     background-color: var(--dark-background);
 }
@@ -57,7 +70,7 @@ body {
     padding-left: 9%;
 }
 
-#edit a:link, #edit a:visited, #new-link a:link, #new-link a:visited {
+.container a:link, .container a:visited, #back-projects a:link, #back-projects a:visited, #edit a:link, #edit a:visited, #new-link a:link, #new-link a:visited {
     background-color: var(--content-secondary);
     border-radius: 15px;
     color: var(--text-color);
@@ -73,7 +86,7 @@ body {
     padding: 10px 15px;
 }
   
- #edit a:hover, #edit a:active, #new-link a:active, #new-link a:hover {
+.container a:hover, .container a:active, #back-projects a:hover, #back-projects a:active, #edit a:hover, #edit a:active, #new-link a:active, #new-link a:hover {
     background-color: #192d3b;
 }
 
