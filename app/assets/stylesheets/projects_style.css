@@ -1,0 +1,53 @@
+body {
+    font: small-caps bold 18px/1 sans-serif;
+}
+
+#img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.project-cell {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: rgb(190, 162, 213);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#title {
+    padding-top: 15px;
+    padding-left: 25px;
+}
+
+#edit {
+    padding-left: 25px;
+}
+
+#new-link {
+    padding-left: 9%;
+}
+
+#edit a:link, #edit a:visited, #new-link a:link, #new-link a:visited {
+    background-color: #361a57;
+    border-radius: 15px;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#new-link a:link, #new-link a:visited {
+    font-size: 24px;
+    background-color: #200939;
+    padding: 10px 15px;
+}
+  
+ #edit a:hover, #edit a:active, #new-link a:active, #new-link a:hover {
+    background-color: rgb(97, 48, 154);
+}
+
+
+  
