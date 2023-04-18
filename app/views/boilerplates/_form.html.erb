@@ -15,8 +15,8 @@
     <%= form.text_field :name %>
   </div>
 
-  <div>
-    <%= form.text_field :git_link %>
+  <div id="git-link">
+    <%= form.url_field :git_link, placeholder: "https://github.com/example", pattern: "https(:\/\/)(github|gitlab).*"%>
   </div>
 
   <div>
