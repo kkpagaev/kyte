@@ -1,5 +1,3 @@
-# Make sure it matches the Ruby version in .ruby-version and Gemfile
-ARG RUBY_VERSION=3.1.0
 ARG SSH_PRV_KEY
 ARG SSH_PUB_KEY
 ARG MASTER_KEY
