@@ -20,6 +20,10 @@
   </div>
 
   <div>
+    <%= form.select :boilerplate_id, options_from_collection_for_select(@boilerplates, :id, :name) %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

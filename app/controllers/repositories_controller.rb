@@ -1,6 +1,7 @@
 class RepositoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_repository, only: %i[ show edit update destroy ]
+  before_action :set_boilerplates, only: %i[ new edit ]
 
   # GET /repositories or /repositories.json
   def index
@@ -23,6 +24,7 @@ class RepositoriesController < ApplicationController
   # POST /repositories or /repositories.json
   def create
     @repository = Repository.new(repository_params)
+    @repository.user = current_user
 
     respond_to do |format|
       if @repository.save
@@ -66,6 +68,10 @@ class RepositoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def repository_params
-      params.require(:repository).permit(:title, :name)
+      params.require(:repository).permit(:title, :name, :boilerplate_id, :project_id)
+    end
+
+    def set_boilerplates
+      @boilerplates = Boilerplate.all
     end
 end
