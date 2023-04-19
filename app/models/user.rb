@@ -12,4 +12,9 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true, uniqueness: true
   validates :password_confirmation, presence: true, length: { minimum: 6 }
+
+  # users that are not in the repository
+  def self.all_outside_repository(repository_id)
+    User.where.not(id: Repository.find(repository_id).users.pluck(:id))
+  end
 end

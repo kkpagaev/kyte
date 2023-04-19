@@ -17,6 +17,8 @@ class Repository < ApplicationRecord
 
   after_create :fill_project_with_boilerplate
 
+  after_destroy :delete_project
+
   def add_team_member(user)
     Gitlab.add_team_member(remote_id, user.gitlab_id, 40)
 
@@ -31,6 +33,10 @@ class Repository < ApplicationRecord
 
   def remote_project
     Gitlab.project(@remote_id)
+  end
+
+  def delete_project
+    Gitlab.delete_project(remote_id)
   end
 
   private

@@ -3,7 +3,13 @@
         <div>
             <h2><%= @project.title %></h2>
         </div>
+        <div>
+          <%= link_to "Edit", edit_project_path(@project) %>
+          <%= link_to "New Repository", new_repository_path(:project_id => @project) %>
+          <%= button_to "Delete", project_path(@project), method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
         <div class="repositories">
+          <h3>Repositories</h3>
           <% @project.repositories.each do |repository| %>
             <div>
               <p><b>Repository:</b> <%= repository.title %>

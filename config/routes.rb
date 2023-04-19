@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   get 'project_view', to: 'projects#project_view', as: :project_view
 
   get 'repository_view', to: 'projects#repository_view', as: :repository_view
+
+  post 'repository/add_member', to: 'repositories#add_member', as: :add_member
+
+  delete 'repository/remove_member', to: 'repositories#remove_member', as: :remove_member
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

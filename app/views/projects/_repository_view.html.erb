@@ -1,7 +1,12 @@
 <turbo-frame id="right-frame">
-  <%= link_to "Show this project", project_view_path(id: @project.id) %>
+  <h2>Repository</h2>
   <%= @repository.name %>
+  <br />
+  <%= link_to "Show project", project_view_path(id: @project.id) %>
+  <a href="<%= @repository.remote_url %>" target="_blank">Remote</a>
   <div>
+    <h3>Members</h3>
 
+    <%= render partial: "members", locals: { repository: @repository, members: @repository.users } %>
   </div>
 </turbo-frame>

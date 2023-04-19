@@ -30,6 +30,18 @@ class ProjectsController < ApplicationController
       )
   end
 
+  def repository_new
+    @repository = Repository.new
+    @project = Project.find(params[:project_id])
+    @repository.project = @project
+
+    render turbo_stream:
+      turbo_stream.replace('right-frame',
+        partial: 'repository_new',
+        locals: { repository: @repository }
+      )
+  end
+
   # GET /projects/new
   def new
     @project = Project.new

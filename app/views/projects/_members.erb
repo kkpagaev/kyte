@@ -1,0 +1,16 @@
+<turbo-frame id="members-frame">
+  <%= bootstrap_form_with(url: "repository/add_member") do |form| %>
+    <%= form.hidden_field :repository_id, value: repository.id %>
+    <%= form.select :user_id, options_for_select(User.all_outside_repository(repository.id).map { |u| [u.name, u.id] }) %>
+    <%= form.submit "Add member" %>
+  <% end %>
+
+  <ul>
+    <% members.each do |member| %>
+      <li>
+        <%= member.name %>
+        <%= button_to "Remove", remove_member_path(repository_id: repository, user_id: member), method: :delete %>
+      </li>
+    <% end %>
+  </ul>
+</turbo-frame>
