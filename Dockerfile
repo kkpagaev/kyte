@@ -2,7 +2,7 @@ ARG SSH_PRV_KEY
 ARG SSH_PUB_KEY
 ARG MASTER_KEY
 
-FROM ruby:$RUBY_VERSION
+FROM ruby:3.1.0
 
 # Install libvips for Active Storage preview support
 RUN apt-get update -qq && \
