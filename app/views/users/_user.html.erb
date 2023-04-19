@@ -1,2 +1,7 @@
 <div id="<%= dom_id user %>">
+  <%= user.name %>
+  <%= user.email %>
+  <%= link_to "Edit", edit_user_path(user) %>
+  <%= link_to "Delete", user, method: :delete, data: { confirm: "Are you sure?" } %>
+
 </div>

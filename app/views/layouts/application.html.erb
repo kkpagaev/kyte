@@ -20,6 +20,7 @@
     <nav id="navigation" class="navbar navbar-expand-sm navbar-light">
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+          <% if user_signed_in? %>
           <li class="nav-item active">
             <a class="nav-link" href="/boilerplates">
               Boilerplates
@@ -31,15 +32,24 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/users">
+            <a class="nav-link" href="/admin/users">
               Users
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
 
-            </a>
+          <li class="nav-item">
+              <%= link_to "Sign out", destroy_user_session_path, class: "nav-link" %>
           </li>
+          <% else %>
+          <li class="nav-item">
+              <%= link_to 'Register', new_user_registration_path, class: "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+             <%= link_to 'Sign in', new_user_session_path, class: "nav-link" %>
+          </li>
+          <% end %>
+
         </ul>
       </div>
     </nav>

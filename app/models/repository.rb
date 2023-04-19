@@ -17,6 +17,22 @@ class Repository < ApplicationRecord
 
   after_create :fill_project_with_boilerplate
 
+  def add_team_member(user)
+    Gitlab.add_team_member(remote_id, user.gitlab_id, 40)
+
+    users << user
+  end
+
+  def remove_team_member(user)
+    Gitlab.remove_team_member(remote_id, user.gitlab_id)
+
+    users.delete(user)
+  end
+
+  def remote_project
+    Gitlab.project(@remote_id)
+  end
+
   private
 
   def create_gilab_project
@@ -28,9 +44,5 @@ class Repository < ApplicationRecord
 
   def fill_project_with_boilerplate
     FillRepositoryJob.perform_async(id)
-  end
-
-  def add_team_member(user)
-    Gitlab.add_team_member(remote_id, user.gitlab_id, remote_id)
   end
 end
