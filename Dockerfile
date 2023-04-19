@@ -2,6 +2,7 @@
 ARG RUBY_VERSION=3.1.0
 ARG SSH_PRV_KEY
 ARG SSH_PUB_KEY
+ARG MASTER_KEY
 
 FROM ruby:$RUBY_VERSION
 
@@ -38,6 +39,8 @@ RUN bundle install
 
 # Copy application code
 COPY . .
+
+RUN echo "$MASTER_KEY" > /rails/config/master.key
 
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile --gemfile app/ lib/
