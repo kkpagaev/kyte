@@ -1,8 +1,12 @@
-ARG SSH_PRV_KEY
-ARG SSH_PUB_KEY
-ARG MASTER_KEY
-
 FROM ruby:3.1.0
+
+ARG ssh_prv_key
+ARG ssh_pub_key
+ARG master_key
+
+ENV SSH_PRIVATE_KEY=${ssh_prv_key}
+ENV SSH_PUBLIC_KEY=${ssh_pub_key}
+ENV MASTER_KEY=${master_key}
 
 # Install libvips for Active Storage preview support
 RUN apt-get update -qq && \
@@ -18,8 +22,8 @@ RUN apt-get update && apt-get install -y nodejs yarn
 
 RUN mkdir /root/.ssh
 
-RUN echo "$SSH_PRV_KEY" > /root/.ssh/id_rsa && \
-    echo "$SSH_PUB_KEY" > /root/.ssh/id_rsa.pub && \
+RUN echo ${SSH_PRV_KEY} > /root/.ssh/id_rsa && \
+    echo ${SSH_PUB_KEY} > /root/.ssh/id_rsa.pub && \
     chmod 600 /root/.ssh/id_rsa && \
     chmod 600 /root/.ssh/id_rsa.pub
 # Rails app lives here
@@ -38,7 +42,8 @@ RUN bundle install
 # Copy application code
 COPY . .
 
-RUN echo "$MASTER_KEY" > /rails/config/master.key
+RUN echo ${MASTER_KEY} > /rails/config/master.key
+RUN echo ${MASTER_KEY}
 
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile --gemfile app/ lib/
