@@ -3,7 +3,9 @@
   <%= @repository.name %>
   <br />
   <%= link_to "Show project", project_view_path(id: @project.id) %>
+  <%= button_to "Delete", repository_path(@repository), method: :delete, data: { confirm: "Are you sure?" } %>
   <a href="<%= @repository.remote_url %>" target="_blank">Remote</a>
+
   <div>
     <h3>Members</h3>
 

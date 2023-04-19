@@ -83,6 +83,9 @@ class RepositoriesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to repositories_url, notice: "Repository was successfully destroyed." }
       format.json { head :no_content }
+      format.turbo_stream do
+        redirect_to project_view_path(:id => @repository.project_id)
+      end
     end
   end
 
