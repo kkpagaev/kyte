@@ -3,5 +3,13 @@
         <div>
             <h2><%= @project.title %></h2>
         </div>
+        <div class="repositories">
+          <% @project.repositories.each do |repository| %>
+            <div>
+              <h2><%= link_to repository.name, repository_view_path(id: @project.id, repository_id: repository.id) %></h2>
+              <p><%= repository.title %></p>
+            </div>
+          <% end %>
+        </div>
     <% end %>
 </turbo-frame>

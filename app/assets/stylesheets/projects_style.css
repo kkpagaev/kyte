@@ -15,10 +15,20 @@
 body {
   font: small-caps bold 18px/1 sans-serif;
   background-color: var(--default-background) !important;
-  color: var(--title-color);
+  color: var(--title-color) !important;
 }
 
-#right-frame h2 {
+p.alert {
+  background-color: var(--content-main);
+  border: 1px solid var(--content-secondary);
+  color: var(--text-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+h2 {
   color: var(--title-color);
 }
 

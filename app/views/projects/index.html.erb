@@ -8,12 +8,12 @@
       <% @projects.each do |pro| %>
         <%= render pro %>
       <% end %>
+      <p id="new-link">
+        <%= link_to "New project", new_project_path %>
+      </p>
     </div>
   </div>
   <div class="col-md-8">
     <%= render 'project_view', locals: { project: @project } %>
   </div>
 </div>
-<p id="new-link">
-  <%= link_to "New project", new_project_path %>
-</p>

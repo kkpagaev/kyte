@@ -13,6 +13,14 @@ services:
     volumes:
       - db:/var/lib/postgres/data
 
+  redis:
+    image: redis
+    command: redis-server
+    ports:
+      - 6379:6379
+    volumes:
+      - redis:/data
+
   pgadmin:
     container_name: pgadmin4_container
     image: dpage/pgadmin4
@@ -28,5 +36,6 @@ services:
 
 volumes:
   db:
+  redis:
   nodes:
   shards:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_18_231453) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_19_025948) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -68,6 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_18_231453) do
     t.bigint "project_id"
     t.bigint "boilerplate_id"
     t.string "remote_id"
+    t.string "remote"
     t.index ["boilerplate_id"], name: "index_repositories_on_boilerplate_id"
     t.index ["project_id"], name: "index_repositories_on_project_id"
   end

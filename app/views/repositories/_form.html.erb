@@ -1,4 +1,7 @@
 <%= bootstrap_form_with(model: repository) do |form| %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field :project_id, value: params[:project_id] %>
+
   <% if repository.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(repository.errors.count, "error") %> prohibited this repository from being saved:</h2>
@@ -20,7 +23,7 @@
   </div>
 
   <div>
-    <%= form.select :boilerplate_id, options_from_collection_for_select(@boilerplates, :id, :name) %>
+    <%= form.select :boilerplate_id, options_from_collection_for_select(Boilerplate.all, :id, :name) %>
   </div>
 
   <div>

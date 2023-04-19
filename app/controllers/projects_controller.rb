@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
 
-  before_action :set_project, only: %i[ show edit update destroy, project_view ]
+  before_action :set_project, only: %i[ show edit update destroy project_view repository_view ]
 
   # GET /projects or /projects.json
   def index
@@ -15,9 +15,18 @@ class ProjectsController < ApplicationController
 
   def project_view
     render turbo_stream:
-      turbo_stream.replace('right-frame', 
-        partial: 'project_view', 
+      turbo_stream.replace('right-frame',
+        partial: 'project_view',
         locals: { project: @project }
+      )
+  end
+
+  def repository_view
+    @repository = Repository.find(params[:repository_id])
+    render turbo_stream:
+      turbo_stream.replace('right-frame',
+        partial: 'repository_view',
+        locals: { repository: @repository }
       )
   end
 
