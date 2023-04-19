@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_19_025948) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_19_044911) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -69,6 +69,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_19_025948) do
     t.bigint "boilerplate_id"
     t.string "remote_id"
     t.string "remote"
+    t.string "remote_url"
     t.index ["boilerplate_id"], name: "index_repositories_on_boilerplate_id"
     t.index ["project_id"], name: "index_repositories_on_project_id"
   end
@@ -87,6 +88,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_19_025948) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "gitlab_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

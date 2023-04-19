@@ -23,9 +23,14 @@ class Repository < ApplicationRecord
     project = Gitlab.create_project(name)
     self.remote_id = project.id
     self.remote = project.ssh_url_to_repo
+    self.remote_url = project.http_url_to_repo
   end
 
   def fill_project_with_boilerplate
     FillRepositoryJob.perform_async(id)
+  end
+
+  def add_team_member(user)
+    Gitlab.add_team_member(remote_id, user.gitlab_id, remote_id)
   end
 end

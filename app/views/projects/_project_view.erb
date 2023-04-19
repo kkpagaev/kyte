@@ -6,8 +6,12 @@
         <div class="repositories">
           <% @project.repositories.each do |repository| %>
             <div>
-              <h2><%= link_to repository.name, repository_view_path(id: @project.id, repository_id: repository.id) %></h2>
-              <p><%= repository.title %></p>
+              <p><b>Repository:</b> <%= repository.title %>
+              </p>
+              <p>
+                <a href="<%= repository.remote_url %>">git</a>
+                <%= link_to "View", repository_view_path(id: @project.id, repository_id: repository.id) %></p>
+              </p>
             </div>
           <% end %>
         </div>
