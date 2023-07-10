@@ -1,24 +1,14 @@
-# README
+# Kyte project - team managing tool
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project was created for Ruby on Rails course in NaUKMA.
 
-Things you may want to cover:
+Core functionality:
 
-* Ruby version
+- Add new team members
+- Add code bases with boilerplate code
+- Create new GitHub repositories with given boilerplate
+- Manage repository members
 
-* System dependencies
+## Tools
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project is build with web framework Ruby On Rails using Sidekiq for executing async tasks
